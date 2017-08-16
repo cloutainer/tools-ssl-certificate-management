@@ -19,8 +19,8 @@ cat <<EOF | cfssl genkey - | cfssljson -bare ${DOMAIN_NAME}
   ],
   "CN": "${DOMAIN_NAME}",
   "key": {
-    "algo": "ecdsa",
-    "size": 256
+    "algo": "rsa",
+    "size": 2048
   }
 }
 EOF
