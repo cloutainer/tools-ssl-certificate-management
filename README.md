@@ -7,7 +7,7 @@ Issue **Self Signed SSL Certificates by your Kubernetes Master** signed by the k
 This is basically just a convenient script based on the *[Managing TLS in a Cluster Documentation](https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/)*.
 
 ----
-&nsbp;
+&nbsp;
 
 ### Prerequisites
 
@@ -41,7 +41,7 @@ Doubleclick on the `kube-ca.pem` and then doubleclick on `kubernetes` and select
 
 
 ----
-&nsbp;
+&nbsp;
 
 ### Issue an Certificate and create it as a k8s secret
 
@@ -62,7 +62,7 @@ a secret inside Kubernetes that looks like this:
 ![](./doc/ssl-secret-dashboard.png)
 
 ----
-&nsbp;
+&nbsp;
 
 ### Use Certs from Secret inside your Pod
 
