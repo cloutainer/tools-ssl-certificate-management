@@ -77,3 +77,4 @@ rm -f ssl_crt_base64
 rm -f ssl_key
 rm -f ssl_crt
 rm -f ${DOMAIN_NAME}.csr
+kubectl delete certificatesigningrequest csr-${DOMAIN_NAME}
