@@ -28,7 +28,7 @@ so that we can trust it on our Mac.
 
 ```
 cat ~/.kube/config \
-    | yq -y '.clusters[0].cluster["certificate-authority-data"]' \
+    | yq --raw-output '.clusters[0].cluster["certificate-authority-data"]' \
     | base64 --decode > kube-ca.pem
 ```
 &nbsp;
