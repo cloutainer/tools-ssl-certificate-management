@@ -61,10 +61,13 @@ kubectl get csr csr-${DOMAIN_NAME} -o jsonpath='{.status.certificate}'  | base64
 openssl base64 -in ${DOMAIN_NAME}-key.pem -out ssl_key_base64 -A
 openssl base64 -in ${DOMAIN_NAME}.crt -out ssl_crt_base64 -A
 
+cp ${DOMAIN_NAME}-key.pem ssl_key
+cp ${DOMAIN_NAME}.crt ssl_crt
+
 #
 # CREATE SECRET
 #
-kubectl create secret generic ssl-${DOMAIN_NAME} --from-file=./ssl_key_base64 --from-file=./ssl_crt_base64
+kubectl create secret generic ssl-${DOMAIN_NAME} --from-file=./ssl_key_base64 --from-file=./ssl_crt_base64 --from-file=./ssl_key --from-file=./ssl_crt
 
 #
 # CLEANUP
