@@ -74,4 +74,6 @@ kubectl create secret generic ssl-${DOMAIN_NAME} --from-file=./ssl_key_base64 --
 #
 rm -f ssl_key_base64
 rm -f ssl_crt_base64
+rm -f ssl_key
+rm -f ssl_crt
 rm -f ${DOMAIN_NAME}.csr
