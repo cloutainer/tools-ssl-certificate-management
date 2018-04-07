@@ -48,7 +48,9 @@ Doubleclick on the `kube-ca.pem` and then doubleclick on `kubernetes` and select
 We want to create a private key and certificate for `foo.codeclou.io` and the IP `192.168.178.66`
 which is our NodeIP of the master, since we use bare metal install and will expose our Service later via HTTPS on a `NodeIP:NodePort`. You might want to use the external IP of your Loadbalancer or whatever IP you use.
 
-:bangbang: **NOTE**: You must be on a computer where `kubectl` is executed as kubernetes admin, since the script will approve the csr!
+ * :bangbang: **NOTE**: You must be on a computer where `kubectl` is executed as kubernetes admin, since the script will approve the csr!
+ * :bangbang: It will use currently selected Namespace! Change Namespace before with
+   * `kubectl config set-context $(kubectl config current-context) --namespace=mynamespace`
 
 ```
 git clone https://github.com/cloutainer/tools-ssl-certificate-management.git
@@ -60,6 +62,8 @@ After the script has run you will have two files `foo.codeclou.io-key.pem` and `
 a secret inside Kubernetes that looks like this:
 
 ![](./doc/ssl-secret-dashboard.png)
+
+
 
 ----
 &nbsp;
