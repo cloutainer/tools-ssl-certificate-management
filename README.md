@@ -23,6 +23,16 @@ pip install yq
 brew install cfssl
 ```
 
+Install on Ubuntu (as regular user)
+
+```
+sudo apt-get install golang-go
+echo "export GOPATH=$HOME/go" >> ~/.bashrc
+echo "export PATH=$PATH:$GOROOT/bin:$GOPATH/bin" >> ~/.bashrc
+source ~/.bashrc
+go get -u github.com/cloudflare/cfssl/cmd/cfssl
+```
+
 Extract the Cluster CA Certifacte from the kube config and base64 decode it into `kube-ca.pem`
 so that we can trust it on our Mac.
 
