@@ -26,9 +26,13 @@ brew install cfssl
 Install on Ubuntu (as regular user). Install `golang-1.10-go` via: https://github.com/golang/go/wiki/Ubuntu
 
 ```
+echo "export GOROOT=/usr/lib/go-1.10/" >> ~/.bashrc
 echo "export GOPATH=$HOME/go" >> ~/.bashrc
 echo "export PATH=$PATH:$GOROOT/bin:$GOPATH/bin" >> ~/.bashrc
 source ~/.bashrc
+sudo rm /usr/bin/go
+sudo ln -s  /usr/lib/go-1.10/bin/go /usr/bin/go
+
 go get -u github.com/cloudflare/cfssl/cmd/cfssl
 go get -u github.com/cloudflare/cfssl/cmd/cfssljson
 
