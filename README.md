@@ -23,18 +23,19 @@ pip install yq
 brew install cfssl
 ```
 
-Install on Ubuntu (as regular user)
+Install on Ubuntu (as regular user). Install `golang-1.10-go` via: https://github.com/golang/go/wiki/Ubuntu
 
 ```
-sudo apt-get install golang-go
 echo "export GOPATH=$HOME/go" >> ~/.bashrc
 echo "export PATH=$PATH:$GOROOT/bin:$GOPATH/bin" >> ~/.bashrc
 source ~/.bashrc
 go get -u github.com/cloudflare/cfssl/cmd/cfssl
+go get -u github.com/cloudflare/cfssl/cmd/cfssljson
 
 sudo pip install pip --upgrade
 sudo pip install yq
-sudo pip install jq
+
+sudo apt-get install jq
 ```
 
 Extract the Cluster CA Certifacte from the kube config and base64 decode it into `kube-ca.pem`
