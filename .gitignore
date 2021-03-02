@@ -1,3 +1,7 @@
 *.pem
 *.crt
 *.csr
+*.key
+*.jks
+*.p12
+ssl_java_keystore_base64
